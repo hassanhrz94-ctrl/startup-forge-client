@@ -6,9 +6,9 @@ import Link from "next/link";
 
 export function DashboardSidebar() {
     const navItems = [
-        { icon: House, href: "/dashboard/recruiter", label: "Home" },
+        { icon: House, href: "/dashboard/recruiter", label: "Overview" },
         { icon: Magnifier, href: "/dashboard/recruiter/jobs", label: "Jobs" },
-        { icon: Bell, href: "/dashboard/recruiter/jobs/new", label: "Post A Job" },
+        { icon: Bell, href: "/dashboard/recruiter/jobs/new", label: "Add Opportunity" },
         { icon: Briefcase, href: "/dashboard/recruiter/company", label: "Company Profile" },
         { icon: Envelope, href: "/messages", label: "Messages" },
         { icon: Person, href: "/profile", label: "Profile" },

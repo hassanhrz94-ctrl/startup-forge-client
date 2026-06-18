@@ -1,138 +1,151 @@
-import { getCompanyJobs } from '@/lib/api/jobs';
-import React from 'react';
-import { Table, Chip, Button, Tooltip } from "@heroui/react";
-// Assuming Gravity Icons maps to standard lucide equivalents; adjust paths if using a custom package
-import { Eye, Edit2, Trash2 } from "lucide-react"; 
+import Link from "next/link";
+import { Button, Chip, Table, Tooltip } from "@heroui/react";
+import { Eye, Edit2, Trash2, Plus } from "lucide-react";
+import { getCompanyJobs } from "@/lib/api/jobs";
 
-const RecruiterJobs = async () => {
-    const companyId = 'company_123'; 
-    const jobs = await getCompanyJobs(companyId) || []; 
+const RecruiterOpportunities = async () => {
+  const companyId = "company_123";
 
-    // Helper to determine status chip coloring
-    const getStatusColor = (status) => {
-        switch (status?.toLowerCase()) {
-            case 'active':
-                return 'success';
-            case 'inactive':
-                return 'danger';
-            default:
-                return 'warning';
-        }
-    };
+  const opportunities = (await getCompanyJobs(companyId)) || [];
 
-    return (
-        <div className="p-6 max-w-7xl mx-auto space-y-4">
-            <div className="flex flex-col gap-1">
-                <h2 className="text-2xl font-bold tracking-tight">Manage All Jobs</h2>
-                <p className="text-sm text-default-500">View, update, and manage your current job postings.</p>
-            </div>
+  const getStatusColor = (status) => {
+    switch (status?.toLowerCase()) {
+      case "active":
+        return "success";
+      case "inactive":
+        return "danger";
+      default:
+        return "warning";
+    }
+  };
 
-            <Table aria-label="Company jobs management table">
-                <Table.ResizableContainer>
-                    <Table.Content className="min-w-[800px]">
-                        <Table.Header>
-                            <Table.Column isRowHeader defaultWidth="2fr" id="jobTitle" minWidth={200}>
-                                Job Title
-                                <Table.ColumnResizer />
-                            </Table.Column>
-                            <Table.Column defaultWidth="1.2fr" id="typeCategory" minWidth={150}>
-                                Type / Category
-                                <Table.ColumnResizer />
-                            </Table.Column>
-                            <Table.Column defaultWidth="1fr" id="location" minWidth={120}>
-                                Location
-                                <Table.ColumnResizer />
-                            </Table.Column>
-                            <Table.Column defaultWidth="1fr" id="status" minWidth={100}>
-                                Status
-                                <Table.ColumnResizer />
-                            </Table.Column>
-                            <Table.Column defaultWidth="1.2fr" id="actions" minWidth={150}>
-                                Actions
-                            </Table.Column>
-                        </Table.Header>
+  return (
+    <div className="max-w-7xl mx-auto p-4 md:p-6">
 
-                        <Table.Body emptyContent={"No jobs found for this company."}>
-                            {jobs.map((job) => (
-                                <Table.Row key={job._id?.$oid || job._id}>
-                                    {/* Job Title */}
-                                    <Table.Cell>
-                                        <div className="font-medium text-default-800">
-                                            {job.jobTitle}
-                                        </div>
-                                    </Table.Cell>
+      {/* Header */}
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
 
-                                    {/* Type / Category */}
-                                    <Table.Cell>
-                                        <div className="flex flex-col gap-0.5">
-                                            <span className="text-sm capitalize font-medium">{job.jobType}</span>
-                                            <span className="text-xs text-default-400 capitalize">{job.jobCategory}</span>
-                                        </div>
-                                    </Table.Cell>
-
-                                    {/* Location */}
-                                    <Table.Cell>
-                                        <span className="text-sm text-default-600">
-                                            {job.isRemote ? "Remote" : job.location}
-                                        </span>
-                                    </Table.Cell>
-
-                                    {/* Status */}
-                                    <Table.Cell>
-                                        <Chip 
-                                            color={getStatusColor(job.status)} 
-                                            size="sm" 
-                                            variant="soft"
-                                            className="capitalize"
-                                        >
-                                            {job.status || "Unknown"}
-                                        </Chip>
-                                    </Table.Cell>
-
-                                    {/* Actions */}
-                                    <Table.Cell>
-                                        <div className="relative flex items-center gap-2">
-                                            <Tooltip content="Video Details">
-                                                <Button 
-                                                    isIconOnly 
-                                                    size="sm" 
-                                                    variant="light" 
-                                                    aria-label="View video details"
-                                                >
-                                                    <Eye className="text-default-400 w-4 h-4" />
-                                                </Button>
-                                            </Tooltip>
-                                            <Tooltip content="Edit Job">
-                                                <Button 
-                                                    isIconOnly 
-                                                    size="sm" 
-                                                    variant="light" 
-                                                    aria-label="Edit job"
-                                                >
-                                                    <Edit2 className="text-default-400 w-4 h-4" />
-                                                </Button>
-                                            </Tooltip>
-                                            <Tooltip content="Delete Job">
-                                                <Button 
-                                                    isIconOnly 
-                                                    size="sm" 
-                                                    variant="light" 
-                                                    color="danger"
-                                                    aria-label="Delete job"
-                                                >
-                                                    <Trash2 className="text-danger w-4 h-4" />
-                                                </Button>
-                                            </Tooltip>
-                                        </div>
-                                    </Table.Cell>
-                                </Table.Row>
-                            ))}
-                        </Table.Body>
-                    </Table.Content>
-                </Table.ResizableContainer>
-            </Table>
+        <div>
+          <h1 className="text-2xl md:text-3xl font-bold">
+            Manage Opportunities
+          </h1>
+          <p className="text-sm text-default-500 mt-1">
+            View, edit and manage all opportunity postings.
+          </p>
         </div>
-    );
+
+        <Link href="/dashboard/recruiter/jobs/new">
+          <Button color="primary" startContent={<Plus size={18} />}>
+            Add Opportunity
+          </Button>
+        </Link>
+
+      </div>
+
+      {/* Table Card */}
+      <div className="border border-default-200 rounded-xl overflow-hidden bg-content1">
+
+        {/* ✅ HeroUI v3 — compound pattern: Table > Table.ScrollContainer > Table.Content */}
+        <Table>
+          <Table.ScrollContainer minWidth={600}>
+            <Table.Content
+              aria-label="Manage opportunities"
+              isStriped
+            >
+
+              <Table.Header>
+                <Table.Column>ROLE TITLE</Table.Column>
+                <Table.Column>WORK TYPE</Table.Column>
+                <Table.Column>COMMITMENT</Table.Column>
+                <Table.Column>DEADLINE</Table.Column>
+                <Table.Column>STATUS</Table.Column>
+                <Table.Column>ACTIONS</Table.Column>
+              </Table.Header>
+
+              <Table.Body
+                emptyContent={"No opportunities found."}
+              >
+                {opportunities.map((opportunity) => (
+                  <Table.Row id={opportunity._id} key={opportunity._id}>
+
+                    {/* Role Title */}
+                    <Table.Cell>
+                      <div className="flex flex-col">
+                        <span className="font-semibold">
+                          {opportunity.roleTitle}
+                        </span>
+                        <span className="text-xs text-default-500 truncate max-w-[250px]">
+                          {opportunity.requiredSkills}
+                        </span>
+                      </div>
+                    </Table.Cell>
+
+                    {/* Work Type */}
+                    <Table.Cell>
+                      <Chip size="sm" variant="flat">
+                        {opportunity.workType}
+                      </Chip>
+                    </Table.Cell>
+
+                    {/* Commitment */}
+                    <Table.Cell>
+                      <span className="capitalize">
+                        {opportunity.commitmentLevel}
+                      </span>
+                    </Table.Cell>
+
+                    {/* Deadline */}
+                    <Table.Cell>
+                      {opportunity.deadline}
+                    </Table.Cell>
+
+                    {/* Status */}
+                    <Table.Cell>
+                      <Chip
+                        size="sm"
+                        variant="flat"
+                        color={getStatusColor(opportunity.status)}
+                      >
+                        {opportunity.status}
+                      </Chip>
+                    </Table.Cell>
+
+                    {/* Actions */}
+                    <Table.Cell>
+                      <div className="flex items-center gap-2">
+
+                        <Tooltip content="View Opportunity">
+                          <Button isIconOnly size="sm" variant="light">
+                            <Eye size={16} />
+                          </Button>
+                        </Tooltip>
+
+                        <Tooltip content="Edit Opportunity">
+                          <Button isIconOnly size="sm" variant="light">
+                            <Edit2 size={16} />
+                          </Button>
+                        </Tooltip>
+
+                        <Tooltip content="Delete Opportunity">
+                          <Button isIconOnly size="sm" variant="light" color="danger">
+                            <Trash2 size={16} />
+                          </Button>
+                        </Tooltip>
+
+                      </div>
+                    </Table.Cell>
+
+                  </Table.Row>
+                ))}
+              </Table.Body>
+
+            </Table.Content>
+          </Table.ScrollContainer>
+        </Table>
+
+      </div>
+    </div>
+  );
 };
 
-export default RecruiterJobs;
+export default RecruiterOpportunities;
