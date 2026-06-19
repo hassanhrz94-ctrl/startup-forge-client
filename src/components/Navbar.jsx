@@ -36,9 +36,16 @@ export default function Navbar() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-fuchsia-500 shadow-lg">
-            <span className="text-xl font-bold text-white">S</span>
-          </div>
+         <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 via-fuchsia-500 to-pink-500 shadow-lg shadow-violet-500/30">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className="h-6 w-6 text-white"
+  >
+    <path d="M13.5 2C17.642 2 21 5.358 21 9.5c0 5.25-4.5 10.5-9 12.5-.415.184-.886-.145-.886-.6V17.5H7.2a.7.7 0 01-.6-1.014L8.5 13H5.6a.7.7 0 01-.6-1.014l3.5-6A.7.7 0 019.1 5h3.014V2.886c0-.455.329-.886.786-.886H13.5z" />
+  </svg>
+</div>
 
           <div className="hidden leading-none sm:block">
             <h1 className="text-lg font-bold text-white">
