@@ -19,7 +19,7 @@ const ApplyPage = async ({ params }) => {
     }
 
     // Auth Role Guard Screen
-    if (user.role !== 'seeker') {
+    if (user.role !== 'collaborator') {
         return (
             <div className="w-full min-h-[80vh] flex flex-col justify-center items-center text-white p-6">
                 <div className="max-w-md w-full text-center p-8 rounded-2xl bg-zinc-900 border border-zinc-800 shadow-xl">
@@ -28,7 +28,7 @@ const ApplyPage = async ({ params }) => {
                     </div>
                     <h3 className="text-xl font-bold text-zinc-100 mb-2">Access Restricted</h3>
                     <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                        Only job seekers can apply for positions. Please sign in with a seeker account to proceed.
+                        Only collaborators can apply for positions. Please sign in with a collaborator account to proceed.
                     </p>
                     <Link 
                         href="/auth/signin" 

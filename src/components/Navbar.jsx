@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+
 import { Button } from "@heroui/react";
 import { useSession, signOut } from "@/lib/auth-client";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,20 +17,35 @@ export default function Navbar() {
 
   }
 
-  const navLinks = [
+const navLinks = [
     {
-      label: "Browse Opportunities",
+      label: "Browse Jobs",
       href: "/jobs",
     },
     {
-      label: "Browse Startups",
-      href: "/company",
+      label: "Companies",
+      href: "/companies",
     },
     {
       label: "Pricing",
       href: "/plans",
     },
   ];
+
+  const dashboardLinks = {
+    seeker: '/dashboard/seeker',
+    recruiter: '/dashboard/recruiter',
+    admin: '/dashboard/admin'
+  }
+
+  if (user?.email) {
+    navLinks.push(
+      {
+        label: 'Dashboard',
+        href: dashboardLinks[user?.role || 'collaborator'] || '/dashboard'
+      }
+    )
+  }
 
   return (
     <nav className="sticky top-0 z-50 border-b border-white/10 bg-[#0B0B0F]/80 backdrop-blur-xl">
