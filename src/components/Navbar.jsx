@@ -42,7 +42,7 @@ const navLinks = [
     navLinks.push(
       {
         label: 'Dashboard',
-        href: dashboardLinks[user?.role || 'collaborator'] || '/dashboard'
+        href: dashboardLinks[user?.role || 'seeker'] || '/dashboard'
       }
     )
   }

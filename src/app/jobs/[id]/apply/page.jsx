@@ -19,7 +19,7 @@ const ApplyPage = async ({ params }) => {
     }
 
     // Auth Role Guard Screen
-    if (user.role !== 'collaborator') {
+    if (user.role !== 'seeker') {
         return (
             <div className="w-full min-h-[80vh] flex flex-col justify-center items-center text-white p-6">
                 <div className="max-w-md w-full text-center p-8 rounded-2xl bg-zinc-900 border border-zinc-800 shadow-xl">

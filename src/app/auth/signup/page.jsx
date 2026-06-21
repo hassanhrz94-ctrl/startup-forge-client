@@ -34,7 +34,7 @@ export default function SignupPage() {
         setSuccess("");
         setIsLoading(true);
 
-   
+        const plan = role === 'seeker' ? 'seeker_free' : 'recruiter_free';
 
         try {
             const { data, error: authError } = await signUp.email({
@@ -42,7 +42,7 @@ export default function SignupPage() {
                 password,
                 name,
                 role,
-              
+                plan
             });
 
             if (authError) {
@@ -135,7 +135,7 @@ export default function SignupPage() {
                                     <Radio.Indicator />
                                 </Radio.Control>
                                 <Radio.Content>
-                                    <Label>Founder</Label>
+                                    <Label>Collaborator</Label>
                                 </Radio.Content>
                             </Radio>
                             <Radio value="recruiter">
@@ -143,7 +143,7 @@ export default function SignupPage() {
                                     <Radio.Indicator />
                                 </Radio.Control>
                                 <Radio.Content>
-                                    <Label>Collaborator</Label>
+                                    <Label>Founder</Label>
                                 </Radio.Content>
                             </Radio>
                         </RadioGroup>
