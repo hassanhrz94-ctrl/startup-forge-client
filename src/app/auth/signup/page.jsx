@@ -41,9 +41,10 @@ export default function SignupPage() {
                 email,
                 password,
                 name,
-                role,
+                userRole:role,
                 plan
             });
+            console.log("Signup response:", { data, authError });
 
             if (authError) {
                 setError(authError.message || "Something went wrong during signup.");
@@ -135,7 +136,7 @@ export default function SignupPage() {
                                     <Radio.Indicator />
                                 </Radio.Control>
                                 <Radio.Content>
-                                    <Label>Collaborator</Label>
+                                    <Label>Job Seeker</Label>
                                 </Radio.Content>
                             </Radio>
                             <Radio value="recruiter">
@@ -143,7 +144,7 @@ export default function SignupPage() {
                                     <Radio.Indicator />
                                 </Radio.Control>
                                 <Radio.Content>
-                                    <Label>Founder</Label>
+                                    <Label>Recruiter</Label>
                                 </Radio.Content>
                             </Radio>
                         </RadioGroup>
