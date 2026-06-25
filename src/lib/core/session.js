@@ -23,7 +23,10 @@ export const requireRole = async (role) => {
     if (!user) {
         redirect('/auth/signin')
     }
-    if (user?.role !== role) {
+    // better-auth admin plugin uses 'role' field for admin.
+    // Custom additional field 'userRole' stores seeker/recruiter roles.
+    const effectiveRole = user?.role === 'admin' ? 'admin' : (user?.userRole || user?.role);
+    if (effectiveRole !== role) {
         redirect('/unauthorized')
     }
     return user;

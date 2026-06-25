@@ -44,7 +44,9 @@ export async function DashboardSidebar() {
         admin: adminNavLinks
     }
 
-    const navItems = navLinksMap[user?.role || 'seeker'];
+    // Admin plugin uses 'role' for admin; seekers/recruiters use the custom 'userRole' field.
+    const effectiveRole = user?.role === 'admin' ? 'admin' : (user?.userRole || 'seeker');
+    const navItems = navLinksMap[effectiveRole] ?? seekerNavLinks;
 
 
     const navContent = <nav className="flex flex-col gap-1">
