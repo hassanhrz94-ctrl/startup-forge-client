@@ -45,7 +45,7 @@ export async function DashboardSidebar() {
     }
 
     // Admin plugin uses 'role' for admin; seekers/recruiters use the custom 'userRole' field.
-    const effectiveRole = user?.role === 'admin' ? 'admin' : (user?.userRole || 'seeker');
+    const effectiveRole = user?.role === 'admin' ? 'admin' : (user?.role || 'seeker');
     const navItems = navLinksMap[effectiveRole] ?? seekerNavLinks;
 
 
