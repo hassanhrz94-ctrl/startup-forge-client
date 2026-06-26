@@ -148,7 +148,7 @@ export default function AdminUsersTable({ users }) {
                                                         onClick={() => initiateRoleChange(userId, user.name, 'admin')}
                                                         className="text-zinc-400 hover:text-white transition-colors"
                                                     >
-                                                        Make Admin
+                                                    Block user
                                                     </button>
                                                 )}
                                                 {userRole !== 'recruiter' && (
@@ -156,7 +156,7 @@ export default function AdminUsersTable({ users }) {
                                                         onClick={() => initiateRoleChange(userId, user.name, 'recruiter')}
                                                         className="text-zinc-400 hover:text-white transition-colors"
                                                     >
-                                                        Make Recruiter
+                                                   Unblock User
                                                     </button>
                                                 )}
                                                 {userRole !== 'seeker' && (
@@ -164,7 +164,7 @@ export default function AdminUsersTable({ users }) {
                                                         onClick={() => initiateRoleChange(userId, user.name, 'seeker')}
                                                         className="text-zinc-400 hover:text-white transition-colors"
                                                     >
-                                                        Make Seeker
+                                                      Unblock User
                                                     </button>
                                                 )}
 

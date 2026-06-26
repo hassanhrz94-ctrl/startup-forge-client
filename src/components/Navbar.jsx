@@ -18,13 +18,15 @@ export default function Navbar() {
   }
 
 const navLinks = [
+
+{
+  label: "Home",
+  href: "/",
+},
+
     {
-      label: "Browse Jobs",
+      label: "Browse Opportunities",
       href: "/jobs",
-    },
-    {
-      label: "Companies",
-      href: "/companies",
     },
     {
       label: "Pricing",

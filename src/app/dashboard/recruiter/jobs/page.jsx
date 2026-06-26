@@ -24,8 +24,8 @@ const RecruiterJobs = async () => {
     return (
         <div className="p-6 max-w-7xl mx-auto space-y-4">
             <div className="flex flex-col gap-1">
-                <h2 className="text-2xl font-bold tracking-tight">Manage All Jobs</h2>
-                <p className="text-sm text-default-500">View, update, and manage your current job postings.</p>
+                <h2 className="text-2xl font-bold tracking-tight">Manage All Opportunities</h2>
+                <p className="text-sm text-default-500">View, update, and manage your current opportunity postings.</p>
             </div>
 
             <Table aria-label="Company jobs management table">
@@ -33,7 +33,7 @@ const RecruiterJobs = async () => {
                     <Table.Content className="min-w-[800px]">
                         <Table.Header>
                             <Table.Column isRowHeader defaultWidth="2fr" id="jobTitle" minWidth={200}>
-                                Job Title
+                                Opportunity Title
                                 <Table.ColumnResizer />
                             </Table.Column>
                             <Table.Column defaultWidth="1.2fr" id="typeCategory" minWidth={150}>

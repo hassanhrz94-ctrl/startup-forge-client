@@ -78,7 +78,7 @@ export default async function Success({ searchParams }) {
                     {/* Interactive Navigation Calls to Action */}
                     <div className="space-y-3">
                         <Link
-                            href="/dashboard"
+                            href="/dashboard/seeker"
                             className="block w-full text-center text-xs font-semibold px-4 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl shadow-lg shadow-blue-950/30 transition duration-200"
                         >
                             Go to Workspace Dashboard

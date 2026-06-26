@@ -30,7 +30,7 @@ const ApplyPage = async ({ params }) => {
                     </div>
                     <h3 className="text-xl font-bold text-zinc-100 mb-2">Access Restricted</h3>
                     <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                        Only job seekers can apply for positions. Please sign in with a seeker account to proceed.
+                        Only Collaborators can apply for positions. Please sign in with a Collaborator account to proceed.
                     </p>
                     <Link 
                         href="/auth/signin" 

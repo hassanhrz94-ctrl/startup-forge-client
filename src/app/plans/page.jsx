@@ -26,22 +26,6 @@ const PricingPage = () => {
     // Organized Data Structuring based directly on your provided image & text parameters
     const seekerPlans = [
         {
-            name: 'Free',
-            id: 'seeker_free',
-            price: '$0',
-            period: '/forever',
-            description: 'Essential features for getting started and organizing your initial search tracking.',
-            icon: <Person className="w-5 h-5 text-zinc-400" />,
-            features: [
-                'Browse & save up to 10 jobs',
-                'Apply to up to 3 jobs per month',
-                'Basic profile page',
-                'Standard email alerts'
-            ],
-            cta: 'Get Started',
-            popular: false
-        },
-        {
             name: 'Pro',
             id: 'seeker_pro',
             price: '$19',
@@ -49,8 +33,8 @@ const PricingPage = () => {
             description: 'Our most popular option for serious active candidates looking to rapidly accelerate landing a role.',
             icon: <Star className="w-5 h-5 text-blue-400" />,
             features: [
-                'Apply to up to 30 jobs per month',
-                'Unlimited saved jobs',
+                'Apply to up to 30 opportunities per month',
+                'Unlimited saved opportunities and alerts',
                 'Advanced application tracking dashboard',
                 'Comprehensive salary insights'
             ],
@@ -67,7 +51,7 @@ const PricingPage = () => {
             features: [
                 'Everything in Pro + Unlimited applications',
                 'Profile boost directly to recruiter feeds',
-                'Early access to freshly published jobs',
+                'Early access to freshly published opportunities',
                 '24/7 Priority customer support queue'
             ],
             cta: 'Go Premium',
@@ -76,22 +60,7 @@ const PricingPage = () => {
     ];
 
     const recruiterPlans = [
-        {
-            name: 'Free',
-            id: 'recruiter_free',
-            price: '$0',
-            period: '/forever',
-            description: 'Ideal baseline solution matching startups launching their initial hiring infrastructure pipeline.',
-            icon: <Briefcase className="w-5 h-5 text-zinc-400" />,
-            features: [
-                'Up to 3 active job posts simultaneously',
-                'Basic applicant management pipeline',
-                'Standard organic listing search visibility',
-                'Great for a company’s first year of hiring'
-            ],
-            cta: 'Start Free Posting',
-            popular: false
-        },
+      
         {
             name: 'Growth',
             id: 'recruiter_growth',
@@ -100,7 +69,7 @@ const PricingPage = () => {
             description: 'Expanded allocation built for expanding companies with active multi-departmental team tracks.',
             icon: <Rocket className="w-5 h-5 text-blue-400" />,
             features: [
-                'Up to 10 active job posts simultaneously',
+                'Up to 10 active opportunity posts simultaneously',
                 'Full automated applicant tracking workflow',
                 'Basic listing performance metrics & analytics',
                 'Dedicated email support desk response'
@@ -116,9 +85,9 @@ const PricingPage = () => {
             description: 'High performance structural operations for organizations with continuous large-scale talent acquisition.',
             icon: <Star className="w-5 h-5 text-purple-400" />,
             features: [
-                'Up to 50 active job posts simultaneously',
+                'Up to 50 active opportunity posts simultaneously',
                 'Advanced interactive analytics visual dashboard',
-                'Premium featured job listing styling boosts',
+                'Premium featured opportunity listing styling boosts',
                 'Multi-user team collaboration seats',
                 'Custom corporate branding options',
                 'Dedicated account manager + priority support'
@@ -177,7 +146,7 @@ const PricingPage = () => {
                                 }`}
                         >
                             <Person className="w-4 h-4" />
-                            For Job Seekers
+                            For Collaborators
                         </button>
                         <button
                             onClick={() => setBillingTarget('recruiter')}
@@ -187,7 +156,7 @@ const PricingPage = () => {
                                 }`}
                         >
                             <Briefcase className="w-4 h-4" />
-                            For Recruiters
+                            For Founders
                         </button>
                     </div>
                 </div>

@@ -94,7 +94,7 @@ const Page = async ({ params }) => {
 
                 {/* RIGHT BLOCK: Core Structural Metadata Panel Widget */}
                 <aside className="bg-zinc-900 border border-zinc-800/80 rounded-[32px] p-6 lg:sticky lg:top-8 space-y-6 shadow-xl">
-                    <h3 className="text-lg font-semibold text-white">Job Overview</h3>
+                    <h3 className="text-lg font-semibold text-white">Opportunity Overview</h3>
 
                     <div className="space-y-4">
                         {/* Location Element */}
@@ -148,7 +148,7 @@ const Page = async ({ params }) => {
                         className="w-full bg-purple-600 hover:bg-purple-500 text-white font-medium py-6 rounded-xl shadow-lg transition-colors flex items-center justify-center gap-2"
                         endContent={<ArrowUpRight className="w-4 h-4" />}
                     >
-                        Apply For This Job
+                        Apply For This opportunity
                     </Link>
                 </aside>
 

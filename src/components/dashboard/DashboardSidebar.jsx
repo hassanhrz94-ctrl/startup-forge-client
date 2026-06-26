@@ -11,31 +11,26 @@ export async function DashboardSidebar() {
     const user = await getUserSession();
 
     const recruiterNavLinks = [
-        { icon: House, href: "/dashboard/recruiter", label: "Home" },
-        { icon: Magnifier, href: "/dashboard/recruiter/jobs", label: "Jobs" },
-        { icon: Bell, href: "/dashboard/recruiter/jobs/new", label: "Post A Job" },
-        { icon: Briefcase, href: "/dashboard/recruiter/company", label: "Company Profile" },
-        { icon: Envelope, href: "/messages", label: "Messages" },
-        { icon: Person, href: "/profile", label: "Profile" },
-        { icon: Gear, href: "/settings", label: "Settings" },
+        { icon: House, href: "/dashboard/recruiter", label: "Overview" },
+        { icon: Magnifier, href: "/dashboard/recruiter/jobs", label: "Manage Opportunities" },
+        { icon: Bell, href: "/dashboard/recruiter/jobs/new", label: "Add Opportunity" },
+        { icon: Briefcase, href: "/dashboard/recruiter/company", label: "My Startup" },
+
     ]
 
     const seekerNavLinks = [
-        { icon: House, href: "/dashboard/seeker", label: "Dashboard" },
-        { icon: Magnifier, href: "/dashboard/seeker/jobs", label: "Jobs" },
-        { icon: Bookmark, href: "/dashboard/seeker/saved-jobs", label: "Saved Jobs" },
-        { icon: FileText, href: "/dashboard/seeker/applications", label: "Applications" },
-        { icon: CreditCard, href: "/dashboard/seeker/billing", label: "Billing" },
-        { icon: Gear, href: "/settings", label: "Settings" },
+        { icon: House, href: "/dashboard/seeker", label: "Overview" },
+        { icon: Magnifier, href: "/jobs", label: "Opportunities" },
+        { icon: FileText, href: "/dashboard/seeker/applications", label: "My Applications" },
+    
+      
     ];
 
     const adminNavLinks = [
-        { icon: House, href: "/dashboard/admin", label: "Dashboard" },
-        { icon: Users, href: "/dashboard/admin/users", label: "Users" },
-        { icon: Building, href: "/dashboard/admin/companies", label: "Companies" },
-        { icon: Briefcase, href: "/dashboard/admin/jobs", label: "Jobs" },
-        { icon: CreditCard, href: "/dashboard/admin/payments", label: "Payments" },
-        { icon: Gear, href: "/dashboard/admin/settings", label: "Settings" },
+        { icon: House, href: "/dashboard/admin", label: "Overview" },
+        { icon: Users, href: "/dashboard/admin/users", label: "Manage Users" },
+        { icon: Building, href: "/dashboard/admin/companies", label: "Manage Startups" },
+        { icon: CreditCard, href: "/dashboard/admin/payments", label: "Transaction" },
     ];
 
     const navLinksMap = {

@@ -90,10 +90,10 @@ const ApplicationsTable = ({ jobs }) => {
         }}
       >
         <Table.ScrollContainer>
-          <Table.Content aria-label="Job applications tracking table">
+          <Table.Content aria-label="Opportunity applications tracking table">
             <Table.Header>
-              <Table.Column className="w-[40%]">Job Title</Table.Column>
-              <Table.Column className="w-[20%]">Company</Table.Column>
+              <Table.Column className="w-[40%]">Opportunity Title</Table.Column>
+              <Table.Column className="w-[20%]">Startup</Table.Column>
               <Table.Column className="w-[15%]">Applied</Table.Column>
               <Table.Column className="w-[15%]">Status</Table.Column>
               <Table.Column className="w-[10%] text-right">Action</Table.Column>

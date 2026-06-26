@@ -144,16 +144,16 @@ export default function CompanyProfile({ recruiter, recruiterCompany }) {
                     <Factory size={24} className="text-zinc-500" />
                 </div>
                 <div className="space-y-2">
-                    <h2 className="text-xl font-semibold text-zinc-200">No Company Registered Yet</h2>
+                    <h2 className="text-xl font-semibold text-zinc-200">No Startup Registered Yet</h2>
                     <p className="text-sm text-zinc-500 max-w-sm mx-auto">
-                        To start creating structural job posts and tracking incoming pipelines, configure your workspace profile.
+                        To start creating structural opportunity posts and tracking incoming pipelines, configure your workspace profile.
                     </p>
                 </div>
                 <Button 
                     onPress={startRegistration}
                     className="bg-white text-black font-semibold hover:bg-zinc-200 rounded-lg px-6 h-11 transition-all"
                 >
-                    Register Company <ArrowRight size={16} className="ml-1" />
+                    Register Startup <ArrowRight size={16} className="ml-1" />
                 </Button>
             </div>
         );
@@ -243,7 +243,7 @@ export default function CompanyProfile({ recruiter, recruiterCompany }) {
                     {/* ROW 1: Company Name + Industry */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <TextField name="companyName" defaultValue={company?.name || ''} isInvalid={!!errors.companyName} className="flex flex-col gap-1 w-full">
-                            <Label className="text-zinc-400 font-medium text-sm">Company Name</Label>
+                            <Label className="text-zinc-400 font-medium text-sm">Startup Name</Label>
                             <Input placeholder="e.g. Acme Corp" className={textInputClass} />
                             {errors.companyName && <FieldError className="text-xs text-danger mt-1">{errors.companyName}</FieldError>}
                         </TextField>
@@ -290,25 +290,11 @@ export default function CompanyProfile({ recruiter, recruiterCompany }) {
 
                     {/* ROW 3: Employee Count + Custom File Logo Upload Block */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                        <Select className={selectBoxClass} name="employeeCount" defaultSelectedKeys={[company?.employeeCount || '1-10']}>
-                            <Label className="text-zinc-400 font-medium text-sm mb-1 block">Employee Count Range</Label>
-                            <Select.Trigger className={triggerClasses}>
-                                <Select.Value className="text-white" />
-                                <Select.Indicator><ChevronDown size={16} className="text-zinc-500" /></Select.Indicator>
-                            </Select.Trigger>
-                            <Select.Popover className={popoverClasses}>
-                                <ListBox className="outline-none">
-                                    <ListBox.Item id="1-10" className={listItemClasses} textValue="1-10 employees">1-10 employees</ListBox.Item>
-                                    <ListBox.Item id="11-50" className={listItemClasses} textValue="11-50 employees">11-50 employees</ListBox.Item>
-                                    <ListBox.Item id="51-200" className={listItemClasses} textValue="51-200 employees">51-200 employees</ListBox.Item>
-                                    <ListBox.Item id="201+" className={listItemClasses} textValue="201+ employees">201+ employees</ListBox.Item>
-                                </ListBox>
-                            </Select.Popover>
-                        </Select>
+
 
                         {/* Custom Styled Upload Block matching attachment blueprint exactly */}
                         <div className="flex flex-col gap-1 w-full">
-                            <span className="text-zinc-400 font-medium text-sm">Company Logo</span>
+                            <span className="text-zinc-400 font-medium text-sm">Startup Logo</span>
                             <div className="flex items-center gap-4 mt-1">
                                 <label className="w-14 h-14 border border-dashed border-zinc-700 hover:border-zinc-500 bg-zinc-900/40 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-colors group relative overflow-hidden">
                                     <input 

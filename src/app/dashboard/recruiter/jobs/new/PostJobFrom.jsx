@@ -95,7 +95,7 @@ export default function PostJobForm({ company }) {
 
                 {/* Form Header block */}
                 <div className="border-b border-zinc-800 pb-6 mb-8">
-                    <h1 className="text-2xl font-semibold tracking-tight">Post a New Job</h1>
+                    <h1 className="text-2xl font-semibold tracking-tight">Post a New Opportunity</h1>
                     <p className="text-zinc-400 text-sm mt-1">
                         Fill out the details below to publish your open position.
                     </p>
@@ -236,7 +236,7 @@ export default function PostJobForm({ company }) {
                     {/* SECTION 2: Job Description */}
                     <Fieldset className="space-y-6 w-full">
                         <legend className="text-lg font-medium text-zinc-300 border-b border-zinc-900 w-full pb-2 mb-2">
-                            Job Details & Description
+                            Opportunity Details & Description
                         </legend>
 
                         <TextField name="responsibilities" isInvalid={!!errors.responsibilities} className="flex flex-col gap-1 w-full">
@@ -282,7 +282,7 @@ export default function PostJobForm({ company }) {
                             type="submit"
                             className="bg-white text-black font-semibold hover:bg-zinc-200 rounded-lg px-6 transition-colors h-11"
                         >
-                            Post Job
+                            Post Opportunity
                         </Button>
                     </div>
                 </Form>}

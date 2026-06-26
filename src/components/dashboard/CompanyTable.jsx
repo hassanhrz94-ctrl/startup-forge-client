@@ -57,7 +57,7 @@ const CompanyTable = ({ companies }) => {
                         <Table.Header>
                             {/* Add the isRowHeader prop to your primary identifying column */}
                             <Table.Column isRowHeader className="text-neutral-400 font-medium pb-4 border-b border-neutral-800">
-                                Company Name
+                                Startup Name
                             </Table.Column>
 
                             <Table.Column className="text-neutral-400 font-medium pb-4 border-b border-neutral-800">
@@ -68,7 +68,7 @@ const CompanyTable = ({ companies }) => {
                                 Industry
                             </Table.Column>
                             <Table.Column className="text-neutral-400 font-medium pb-4 border-b border-neutral-800">
-                                Jobs Count
+                                Opportunities Count
                             </Table.Column>
 
                             <Table.Column className="text-neutral-400 font-medium pb-4 border-b border-neutral-800">
@@ -111,7 +111,7 @@ const CompanyTable = ({ companies }) => {
                                                 {company.industry}
                                             </span>
                                         </Table.Cell>
-                                        {/* Jobs Count Pill */}
+                                        {/* Opportunities Count Pill */}
                                         <Table.Cell className="py-4 align-middle">
                                             <span className="px-3 py-1 bg-neutral-800/60 text-neutral-400 rounded-full text-xs capitalize">
                                                 {company.jobCount}
