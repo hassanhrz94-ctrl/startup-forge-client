@@ -146,7 +146,7 @@ export default function PostJobForm({ company }) {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <Select className={selectBoxClass} name="jobType" isInvalid={!!errors.jobType}>
-                                <Label className="text-zinc-400 font-medium text-sm mb-1 block">Job Type</Label>
+                                <Label className="text-zinc-400 font-medium text-sm mb-1 block">Work Type</Label>
                                 <Select.Trigger className={triggerClasses}>
                                     <Select.Value />
                                     <Select.Indicator />
@@ -164,9 +164,31 @@ export default function PostJobForm({ company }) {
 
                             {/* Inline layout grouping for Salary and Currency mapping */}
                             <div className="grid grid-cols-3 gap-2">
-                              
+                                <div className="col-span-2 space-y-1">
+                                    <span className="text-zinc-400 font-medium text-sm block">Salary Range</span>
+                                    <div className="flex gap-2">
+                                        <TextField name="minSalary" isInvalid={!!errors.minSalary} className="w-full">
+                                            <Input placeholder="Min" type="number" className={textInputClass} />
+                                        </TextField>
+                                        <TextField name="maxSalary" isInvalid={!!errors.maxSalary} className="w-full">
+                                            <Input placeholder="Max" type="number" className={textInputClass} />
+                                        </TextField>
+                                    </div>
+                                </div>
 
-                               
+                                <Select className="w-full mt-6" name="currency" defaultSelectedKeys={["USD"]}>
+                                    <Select.Trigger className={triggerClasses}>
+                                        <Select.Value />
+                                        <Select.Indicator />
+                                    </Select.Trigger>
+                                    <Select.Popover className={popoverClasses}>
+                                        <ListBox className="outline-none">
+                                            <ListBox.Item id="USD" className={listItemClasses} textValue="USD">USD ($)</ListBox.Item>
+                                            <ListBox.Item id="EUR" className={listItemClasses} textValue="EUR">EUR (€)</ListBox.Item>
+                                            <ListBox.Item id="GBP" className={listItemClasses} textValue="GBP">GBP (£)</ListBox.Item>
+                                        </ListBox>
+                                    </Select.Popover>
+                                </Select>
                             </div>
                         </div>
 
