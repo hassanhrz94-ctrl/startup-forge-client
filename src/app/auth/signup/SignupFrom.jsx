@@ -231,7 +231,7 @@ export default function SignupForm({ redirectTo = "/" }) {
                                 </Radio.Control>
 
                                 <Radio.Content>
-                                    <Label>Job Seeker</Label>
+                                    <Label>Collaborators</Label>
                                 </Radio.Content>
                             </Radio>
 
@@ -241,7 +241,7 @@ export default function SignupForm({ redirectTo = "/" }) {
                                 </Radio.Control>
 
                                 <Radio.Content>
-                                    <Label>Recruiter</Label>
+                                    <Label>Founder</Label>
                                 </Radio.Content>
                             </Radio>
                         </RadioGroup>
