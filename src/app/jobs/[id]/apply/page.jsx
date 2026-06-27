@@ -20,7 +20,7 @@ const ApplyPage = async ({ params }) => {
 
     // Auth Role Guard Screen
     // Check userRole (custom additional field) since admin plugin sets role='user' by default.
-    const isSeeker = user.role === 'seeker' && user.role !== 'admin';
+    const isSeeker = user?.userRole === 'seeker' && user?.userRole !== 'admin';
     if (!isSeeker) {
         return (
             <div className="w-full min-h-[80vh] flex flex-col justify-center items-center text-white p-6">

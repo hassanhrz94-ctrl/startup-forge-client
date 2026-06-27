@@ -78,7 +78,7 @@ export default function AdminUsersTable({ users }) {
                         <tbody className="divide-y divide-zinc-800/60 bg-[#1e1e1e]">
                             {users.map((user) => {
                                 const userId = getUserId(user);
-                                const userRole = user.role?.toLowerCase() || 'seeker';
+                                const userRole = user?.userRole?.toLowerCase() || 'seeker';
                                 const userStatus = user.status || 'Active';
 
                                 return (
