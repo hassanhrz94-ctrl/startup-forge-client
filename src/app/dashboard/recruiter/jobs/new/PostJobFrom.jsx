@@ -116,18 +116,18 @@ export default function PostJobForm({ company }) {
                     {/* SECTION 1: Job Information */}
                     <Fieldset className="space-y-6 w-full">
                         <legend className="text-lg font-medium text-zinc-300 border-b border-zinc-900 w-full pb-2 mb-2">
-                            Job Information
+                            Information
                         </legend>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <TextField name="jobTitle" isInvalid={!!errors.jobTitle} className="flex flex-col gap-1 w-full">
-                                <Label className="text-zinc-400 font-medium text-sm">Job Title</Label>
+                                <Label className="text-zinc-400 font-medium text-sm">Role Title</Label>
                                 <Input placeholder="e.g. Senior Frontend Engineer" className={textInputClass} />
                                 {errors.jobTitle && <FieldError className="text-xs text-danger mt-1">{errors.jobTitle}</FieldError>}
                             </TextField>
 
                             <Select className={selectBoxClass} name="jobCategory" isInvalid={!!errors.jobCategory}>
-                                <Label className="text-zinc-400 font-medium text-sm mb-1 block">Job Category</Label>
+                                <Label className="text-zinc-400 font-medium text-sm mb-1 block">Role Category</Label>
                                 <Select.Trigger className={triggerClasses}>
                                     <Select.Value className="text-white placeholder:text-zinc-600" />
                                     <Select.Indicator />
