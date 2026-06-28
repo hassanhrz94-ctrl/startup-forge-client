@@ -237,7 +237,7 @@ export default function CompanyProfile({ recruiter, recruiterCompany }) {
             <Form onSubmit={handleSubmit} className="space-y-8" validationErrors={errors} validationBehavior="aria">
                 <Fieldset className="space-y-6 w-full">
                     <legend className="text-xl font-semibold text-zinc-200 border-b border-zinc-900 w-full pb-3 mb-2">
-                        {company ? 'Update Company Profile' : 'Configure Workspace Platform'}
+                        {company ? 'Update Startup Profile' : 'Configure Workspace Platform'}
                     </legend>
 
                     {/* ROW 1: Company Name + Industry */}

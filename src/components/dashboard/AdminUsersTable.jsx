@@ -104,7 +104,7 @@ export default function AdminUsersTable({ users }) {
                                             {userRole === 'recruiter' ? (
                                                 <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full bg-zinc-100 text-zinc-900 shadow-sm">
                                                     <Briefcase width={12} height={12} />
-                                                    Recruiter
+                                                  Founder
                                                 </span>
                                             ) : userRole === 'admin' ? (
                                                 <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full bg-purple-950/40 text-purple-300 border border-purple-800/50 capitalize">
@@ -113,7 +113,7 @@ export default function AdminUsersTable({ users }) {
                                             ) : (
                                                 <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full bg-zinc-800/50 text-zinc-400 border border-zinc-700/50">
                                                     <Person width={12} height={12} />
-                                                    Seeker
+                                                    Collaborator
                                                 </span>
                                             )}
                                         </td>

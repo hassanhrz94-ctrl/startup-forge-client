@@ -61,7 +61,7 @@ const CompanyTable = ({ companies }) => {
                             </Table.Column>
 
                             <Table.Column className="text-neutral-400 font-medium pb-4 border-b border-neutral-800">
-                                Recruiter Email
+                                Founder Email
                             </Table.Column>
 
                             <Table.Column className="text-neutral-400 font-medium pb-4 border-b border-neutral-800">
