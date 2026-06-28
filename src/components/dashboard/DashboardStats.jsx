@@ -1,5 +1,6 @@
 import React from 'react';
-import { StatCard } from './StatCard';
+import { StatCard } from './StartupForgeDashboard';
+import { StatsCard } from './StatsCard';
 
 export const DashboardStats = ({ statsData = [] }) => {
     return (
@@ -7,7 +8,7 @@ export const DashboardStats = ({ statsData = [] }) => {
             {/* Responsive Grid layout */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {statsData.map((stat, index) => (
-                    <StatCard
+                    <StatsCard
                         key={stat.id || index}
                         title={stat.title}
                         value={stat.value}
